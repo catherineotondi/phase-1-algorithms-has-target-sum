@@ -1,6 +1,19 @@
+
+
 function hasTargetSum(array, target) {
-  // Write your algorithm here
-}
+  //return array.reduce((acc, num)=>acc+num,0) == target
+   for (let i = 0; i < array.length; i++){
+    let diff = target - array[i];
+     for (let j = i + 1; j < array.length; j++){
+       if(array[j] === diff){
+        return true
+       }       
+      }      
+     }
+     return false
+   }
+
+
 
 /* 
   Write the Big O time complexity of your function here
@@ -32,3 +45,6 @@ if (require.main === module) {
 }
 
 module.exports = hasTargetSum;
+
+console.log('hey');
+console.log(hasTargetSum([3,4,5,6],17));
